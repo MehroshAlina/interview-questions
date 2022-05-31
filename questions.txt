@@ -1,0 +1,140 @@
+Q1. What is the difference between list and tuples in Python?
+LIST vs TUPLES
+LIST TUPLES
+Lists are mutable i.e they can be edited. Tuples are immutable (tuples are lists which can’t be edited).
+Lists are slower than tuples. Tuples are faster than list.
+Syntax: list_1 = [10, ‘Chelsea’, 20] Syntax: tup_1 = (10, ‘Chelsea’ , 20)
+
+Q2.What are the common built-in data types in Python?
+
+Ans: The common built in data types in python are-
+
+Numbers– They include integers, floating point numbers, and complex numbers. eg. 1, 7.9,3+4i
+
+List– An ordered sequence of items is called a list. The elements of a list may belong to different data types. Eg. [5,’market’,2.4]
+
+Tuple– It is also an ordered sequence of elements. Unlike lists , tuples are immutable, which means they can’t be changed. Eg. (3,’tool’,1)
+
+String– A sequence of characters is called a string. They are declared within single or double quotes. Eg. “Sana”, ‘She is going to the market’, etc.
+
+Set– Sets are a collection of unique items that are not in order. Eg. {7,6,8}
+
+Dictionary– A dictionary stores values in key and value pairs where each value can be accessed through its key. The order of items is not important. Eg. {1:’apple’,2:’mango}
+
+Boolean– There are 2 boolean values- True and False.
+
+Q3.What is type conversion in Python?
+Ans: Type conversion refers to the conversion of one data type into another.
+
+int() – converts any data type into integer type
+
+float() – converts any data type into float type
+
+ord() – converts characters into integer
+
+hex() – converts integers to hexadecimal
+
+oct() – converts integer to octal
+
+tuple() – This function is used to convert to a tuple.
+
+set() – This function returns the type after converting to set.
+
+list() – This function is used to convert any data type to a list type.
+
+dict() – This function is used to convert a tuple of order (key, value) into a dictionary.
+
+str() – Used to convert integer into a string.
+
+complex(real,imag) – This function converts real numbers to complex(real,imag) number
+
+Q4. What data type can only have either a value of True or False?
+A) A string
+B) A boolean
+C) An integer
+
+Answer: A boolean
+
+Q5.What is the difference between Python Arrays and lists?
+Arrays in python can only contain elements of the same data types i.e., data type of array should be homogeneous. It is a thin wrapper around C language arrays and consumes far less memory than lists.
+Lists in python can contain elements of different data types i.e., data type of lists can be heterogeneous. It has the disadvantage of consuming large amounts of memory.
+
+Q6: What is the purpose of relational operators in Python?
+Answer: The purpose of relational operators in Python is to compare values.
+
+Q7: What are assignment operators in Python?
+Answer: The assignment operators in Python can help in combining all the arithmetic operators with the assignment symbol.
+
+Q8: Why do we need membership operators in Python?
+Answer:  We need membership operators in Python with the purpose to confirm if the value is a member in another or not.
+
+Q9: How are identity operators different from the membership operators?
+Answer: Unlike membership operators, the identity operators compare the values to find out if they have the same value or not.
+
+Q10:What are the logical operators in Python?
+We have three logical operators- and, or, not.
+
+Q11:Write a program to check whether a person is eligible for voting or not. (accept age from user)
+Ans:age=int(input("Enter your age"))
+      if age >=18:
+         print("Eligible for voting")
+     else:
+         print("not eligible for voting")
+
+Q12:write the syntax of a simple if statement.
+Hide Answer
+Ans.if < Condition> :
+       Execute this
+
+Q13:Write a program to display "Hello" if a number entered by user is a multiple of five ,
+otherwise print "Bye".
+Ans. num=int(input("Enter your age"))
+        if num%5==0:
+            print("Hello")
+        else:
+             print("Bye")
+             
+Q14:What is the difference between the continue and break statements in Python?
+Ans:The break statement terminates the loop that contains it. The program immediately moves to the code section that is in the outer scope of the loop.
+The continue statement skips the rest of the code of the current iteration and move to the next iteration.
+
+Q:15:Will the do-while loop work if you don’t end it with a semicolon?
+Ans:Trick question! Python does not support an intrinsic do-while loop.
+
+Q:16 How does a function return values?
+Ans:A function uses the ‘return’ keyword to return a value. Take a look:
+>>> def add(a,b):
+           return a+b
+
+Q17: What is recursion?
+Ans:When a function makes a call to itself, it is termed recursion. But then, in order for it to avoid forming an infinite loop, we must have a base condition.
+Let’s take an example.
+ def facto(n):
+if n==1: return 1
+return n*facto(n-1)
+ facto(4)
+
+Q18: Write a function that computes the factorial of an integer n.
+Ans:def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+Q:19:How would you use *args and **kwargs in a given function?
+*args and **kwargs make Python functions more flexible by accepting a variable number of arguments.
+
+*args pass a variable number of non-keyworded arguments in a list
+**kwargs pass a variable number of keyword arguments in a dictionary
+
+Q20:How to prevent a function from being called an unnecessary amount of time?
+Ans:If the output that is associated with a given input doesn’t change over a period of  time, using caching would make sense for the function.
+A typical scenario would be querying a web server: if you query a URL the first time and you know that response won’t change, you can cache the result.
+from cachetools import cached, TTLCache
+cache = TTLCache(maxsize=100, ttl=86400)
+
+@cached(cache)
+def extract_article_content(url):
+    response = requests.get(url)
+    content = response.content
+    return content
